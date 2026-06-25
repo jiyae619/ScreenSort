@@ -1,0 +1,6 @@
+{
+  "lang": "it",
+  "name": "Italiano (Italian)",
+  "ocr": "it-IT",
+  "sensitive": ["passaporto","password","carta di credito","numero di carta","numero di conto","codice di verifica","carta d'identità","codice fiscale","iban"]
+}

@@ -1,0 +1,6 @@
+{
+  "lang": "vi",
+  "name": "Tiếng Việt (Vietnamese)",
+  "ocr": "vi-VT",
+  "sensitive": ["hộ chiếu","mật khẩu","thẻ tín dụng","số thẻ","số tài khoản","mã xác minh","chứng minh nhân dân","căn cước"]
+}

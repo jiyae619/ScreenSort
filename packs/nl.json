@@ -1,0 +1,6 @@
+{
+  "lang": "nl",
+  "name": "Nederlands (Dutch)",
+  "ocr": "nl-NL",
+  "sensitive": ["paspoort","wachtwoord","creditcard","kaartnummer","rekeningnummer","verificatiecode","identiteitskaart","iban"]
+}

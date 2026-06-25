@@ -1,0 +1,6 @@
+{
+  "lang": "sv",
+  "name": "Svenska (Swedish)",
+  "ocr": "sv-SE",
+  "sensitive": ["passnummer","lösenord","kreditkort","kortnummer","kontonummer","verifieringskod","personnummer"]
+}

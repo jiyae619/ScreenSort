@@ -212,8 +212,11 @@ def redact(text):
 
 # Apple Vision OCR language codes. Onboarding may write an explicit `ocr_languages`
 # list into config (from the installed packs); otherwise we map `languages` here.
-_OCR_MAP = {"en":"en-US","ko":"ko-KR","ja":"ja-JP","es":"es-ES","fr":"fr-FR",
-            "de":"de-DE","zh":"zh-Hans","it":"it-IT","pt":"pt-BR"}
+_OCR_MAP = {"en":"en-US","fr":"fr-FR","it":"it-IT","de":"de-DE","es":"es-ES",
+            "pt":"pt-BR","zh":"zh-Hans","yue":"yue-Hant","ko":"ko-KR","ja":"ja-JP",
+            "ru":"ru-RU","uk":"uk-UA","th":"th-TH","vi":"vi-VT","ar":"ar-SA",
+            "tr":"tr-TR","id":"id-ID","cs":"cs-CZ","da":"da-DK","nl":"nl-NL",
+            "no":"no-NO","ms":"ms-MY","pl":"pl-PL","ro":"ro-RO","sv":"sv-SE"}
 
 def ocr_langs():
     """Vision recognition languages for export.py, in config order (en first if listed)."""

@@ -1,0 +1,6 @@
+{
+  "lang": "tr",
+  "name": "Türkçe (Turkish)",
+  "ocr": "tr-TR",
+  "sensitive": ["pasaport","şifre","kredi kartı","kart numarası","hesap numarası","doğrulama kodu","kimlik numarası"]
+}

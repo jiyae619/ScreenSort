@@ -1,0 +1,6 @@
+{
+  "lang": "zh",
+  "name": "中文 简体 (Chinese, Simplified)",
+  "ocr": "zh-Hans",
+  "sensitive": ["护照","密码","信用卡","卡号","账号","验证码","身份证","银行卡"]
+}

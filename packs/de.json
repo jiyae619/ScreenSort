@@ -1,0 +1,6 @@
+{
+  "lang": "de",
+  "name": "Deutsch (German)",
+  "ocr": "de-DE",
+  "sensitive": ["reisepass","passwort","kreditkarte","kartennummer","kontonummer","bestätigungscode","personalausweis","bankverbindung"]
+}

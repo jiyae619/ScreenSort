@@ -11,7 +11,8 @@ import sys, os, json, glob, copy, argparse
 sys.path.insert(0, os.path.dirname(__file__))
 import lib
 
-PACKS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "packs")
+# packs/ live at the repo root (next to config.json), so go up out of src/.
+PACKS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "packs")
 
 def available_packs():
     """lang -> pack dict, from packs/*.json."""
@@ -112,7 +113,7 @@ def main():
     print(f"✓ wrote {lib.CONFIG_PATH}")
     print("\n🔒 Privacy: screenshots are OCR'd locally; sensitive items are filtered out before")
     print("   any AI step; no photo is ever auto-deleted (you delete by hand in Photos).")
-    print("Next: grant Full Disk Access to your terminal, then  `pilot <batch>`  to export.")
+    print("Next: grant Full Disk Access to your terminal, then  `screensort <batch>`  to export.")
 
 if __name__ == "__main__":
     main()

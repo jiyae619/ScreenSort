@@ -80,7 +80,13 @@ Process **one batch (a year) at a time.** On its card, you’ll do these in orde
 > **The one rule that bites:** in Photos use **⌘⌫** (*Delete from Library*), **not** plain **⌫** (which only removes from the album and leaves the originals taking up space).
 
 ### The sorter (step 4) in 20 seconds
-It opens **pre-sorted**, so you’re spot-checking, not filing from scratch. Each row = one screenshot (thumbnail · confidence dot · OCR preview · category dropdown · 🗑). With **🔎 needs-review-only** on (the default), you see just the uncertain rows + the delete pile. Click a thumbnail to zoom and file with **one key** (works with a Korean IME — it reads the physical key). Then **Save**.
+It opens **pre-sorted**, so you’re spot-checking, not filing from scratch. Each row = one screenshot (thumbnail · confidence dot · OCR preview · category dropdown · 🗑). With **🔎 needs-review-only** on (the default), you see just the uncertain rows + the delete pile.
+
+![The sorter — pre-sorted rows, each with a thumbnail, a confidence dot, the OCR preview, a category dropdown, and a delete button. Only the uncertain rows are shown.](docs/sorter.png)
+
+Click a thumbnail to **zoom**, then file it with **one key** — the hotkey bar runs across the top (A AI, P PM, D Design…). It reads the *physical* key, so it works even with a Korean/Japanese IME active. Then **Save** (posts straight back to the cockpit).
+
+![Zoomed single-screenshot view with the one-key hotkey bar along the top; the image is OCR'd in its original language.](docs/sorter-zoom.png)
 
 ---
 
@@ -101,6 +107,8 @@ Every screenshot is filed into exactly one:
 The note categories (AI…READING) become knowledge notes; PLACES becomes an album; PROTECT is never touched; DELETE is what **Group deletes** stages.
 
 **Categories aren’t fixed.** Edit them in the cockpit (**⚙ Categories** → add / rename / recolor / re-key, with live validation) or in `config.json`.
+
+![The Category Editor — one row per category with name, color, one-key hotkey, role, AI description, and keywords; a Download config.json button saves your changes.](docs/categories.png)
 
 ---
 
@@ -136,12 +144,39 @@ The repo ships **`config.example.json`** at the repo root — copy it to `config
 
 - **`paths`** — where output lives: `vault` (pilot data, notes, archive) and `previews` (cockpit, sorter, thumbnails). Override either.
 - **`categories`** — name, hotkey, color, `desc` (guides the AI), `keywords`, and a `role`. Four roles are reserved and must each appear once: `note`, `protect`, `review`, `delete`; `places` is optional.
-- **`languages`** — OCR + sensitive-lexicon languages (ships `["en","ko"]`).
+- **`languages`** — which languages to OCR and build the sensitive lexicon for (ships `["en","ko"]`). Apple Vision reads ~30 languages — add your own (see **Add your OCR language** below).
 - **`privacy`** — `no_cloud` (skip the AI step) and `redact_pii` (mask PII in snippets).
 - **`batch_unit`** — default batch mode: `year` · `date-range` · `album` · `folder`.
 - **`output`** — note format/folder and Obsidian links.
 
 Edit categories visually with **⚙ Categories** in the cockpit, or `python3 config_editor.py`.
+
+### Add your OCR language
+
+OCR runs on **Apple Vision**, which recognizes ~30 languages locally (Korean, Japanese, Chinese, Russian, Thai, Vietnamese, Arabic, and most European languages). English is always on; which extra languages you add is up to you. Three ways to add one, easiest first:
+
+1. **Re-run setup and pick a shipped pack.** Ships **20 languages** — English (always on) plus Korean, Japanese, Chinese (Simplified + Traditional), Spanish, French, German, Italian, Portuguese, Dutch, Russian, Ukrainian, Polish, Turkish, Arabic, Vietnamese, Thai, Indonesian, and Swedish.
+   ```bash
+   python3 ~/screensort/src/onboarding.py
+   ```
+   It writes `languages`, the Vision OCR codes, and a sensitive-term lexicon for each language into your `config.json`.
+
+2. **Add the language to `config.json` directly.** Common codes map automatically — just list them:
+   ```json
+   "languages": ["en", "de"]
+   ```
+
+3. **Ship a pack for any other language** — drop a small file at `packs/<code>.json`, then re-run `onboarding.py`:
+   ```json
+   { "lang": "de", "name": "Deutsch (German)", "ocr": "de-DE",
+     "sensitive": ["reisepass", "kreditkarte", "passwort", "kontonummer"] }
+   ```
+   `ocr` is the Apple Vision language code; `sensitive` is an **optional** list of terms that force a screenshot to **PROTECT**. (Structural PII — card numbers, SSNs, IBANs, emails — is always detected regardless of language.)
+
+To see exactly which OCR codes *your* Mac supports:
+```bash
+python3 -c "import Vision; r=Vision.VNRecognizeTextRequest.alloc().init(); r.setRecognitionLevel_(0); print(r.supportedRecognitionLanguagesAndReturnError_(None)[0])"
+```
 
 ---
 

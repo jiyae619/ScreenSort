@@ -1,0 +1,6 @@
+{
+  "lang": "pl",
+  "name": "Polski (Polish)",
+  "ocr": "pl-PL",
+  "sensitive": ["paszport","hasło","karta kredytowa","numer karty","numer konta","kod weryfikacyjny","dowód osobisty","pesel"]
+}

@@ -1,0 +1,6 @@
+{
+  "lang": "id",
+  "name": "Bahasa Indonesia (Indonesian)",
+  "ocr": "id-ID",
+  "sensitive": ["paspor","kata sandi","kartu kredit","nomor kartu","nomor rekening","kode verifikasi","kartu identitas"]
+}

@@ -1,0 +1,6 @@
+{
+  "lang": "zh-Hant",
+  "name": "中文 繁體 (Chinese, Traditional)",
+  "ocr": "zh-Hant",
+  "sensitive": ["護照","密碼","信用卡","卡號","帳號","驗證碼","身分證","銀行卡"]
+}

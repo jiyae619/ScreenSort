@@ -1,0 +1,6 @@
+{
+  "lang": "pt",
+  "name": "Português (Portuguese)",
+  "ocr": "pt-BR",
+  "sensitive": ["passaporte","senha","cartão de crédito","número do cartão","número da conta","código de verificação","cartão de identidade","iban"]
+}
