@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Your personal config (your paths + custom keywords). The repo ships
+# config.example.json instead — `cp config.example.json config.json` and customize.
+config.json
+config.json.bak
+*.bak
+
+# Dev / working notes — personal progress, not for the public repo
+ROADMAP.md
+AGENTS.md
+
+# ── Personal data — NEVER commit ───────────────────────────────────────────────
+# These normally live in your vault / html-previews, NOT in this repo. They're
+# ignored defensively in case you point VAULT/PREV/output inside the repo: every
+# one of them contains OCR of your real screenshots (often sensitive).
+export.json
+*-decisions.json
+*-seed.json
+seed.json
+dups.json
+sensitive.json
+notes.json
+fulltext.txt
+delete.txt
+_triage/
+pilot-*-thumbs/
+pilot-*-recategorize.html
+photos-pilot-summary.html
+photos-pilot-dashboard.html
+/pilot/
+/output/
+/summary/
+/text-extract/

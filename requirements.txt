@@ -1,0 +1,14 @@
+# Photos Pilot — Python dependencies (macOS only)
+#
+#   python3 -m pip install --user -r requirements.txt
+#
+# osxphotos        : reads the Apple Photos library (read-only)
+# pyobjc-framework-Vision / Quartz / Cocoa : the bridge to Apple Vision OCR + image loading
+#
+# Everything else the toolkit uses is the Python standard library or macOS built-ins
+# (sips). tesseract is an OPTIONAL fallback OCR for the loose-folder path — install it
+# separately with `brew install tesseract tesseract-lang` if you want it.
+osxphotos
+pyobjc-framework-Vision
+pyobjc-framework-Quartz
+pyobjc-framework-Cocoa

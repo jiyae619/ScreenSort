@@ -1,0 +1,6 @@
+{
+  "lang": "es",
+  "name": "Español (Spanish)",
+  "ocr": "es-ES",
+  "sensitive": ["pasaporte","número de seguro social","tarjeta de crédito","contraseña","número de cuenta","código de verificación","visa","iban"]
+}

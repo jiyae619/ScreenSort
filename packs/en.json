@@ -1,0 +1,7 @@
+{
+  "lang": "en",
+  "name": "English",
+  "ocr": "en-US",
+  "always_on": true,
+  "sensitive": ["passport","social security","ssn","routing number","account number","iban","password","verification code"," otp","cvv","card number","boarding pass","uscis","h-1b","h1b","credit line"]
+}

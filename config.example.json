@@ -1,0 +1,28 @@
+{
+  "_comment": "Starter config. Copy to config.json and customize (cp config.example.json config.json). If config.json is absent, the built-in default in lib.py is used, so the tool still runs. Edit categories visually with `python3 config_editor.py`.",
+  "paths": {
+    "vault": "~/Documents/Obsidian Vault",
+    "previews": "~/Documents/Obsidian Vault/Screenshots/previews"
+  },
+  "output": { "format": "markdown", "folder": "~/Documents/Obsidian Vault/Screenshots/summary", "obsidian_links": true },
+  "languages": ["en"],
+  "ocr_languages": ["en-US"],
+  "batch_unit": "year",
+  "privacy": { "no_cloud": false, "redact_pii": true },
+  "categories": [
+    { "name": "AI",      "hotkey": "a", "color": "#7aa2ff", "role": "note", "desc": "LLMs, prompting, agents, AI/ML concepts, model news", "keywords": ["llm","prompt","agentic","gpt"," rag","model","embedding"] },
+    { "name": "PM",      "hotkey": "p", "color": "#ffb454", "role": "note", "desc": "product-management craft, frameworks, interviews, planning, metrics, discovery", "keywords": ["product manager"," pm ","north star","roadmap","prd","discovery","metric"] },
+    { "name": "DESIGN",  "hotkey": "d", "color": "#5fd3a3", "role": "note", "desc": "UX/UI, design systems, Figma, usability, visual/interaction design", "keywords": ["figma","usability","hci"," ux ","interface","ux research"] },
+    { "name": "MINDSET", "hotkey": "m", "color": "#c08af7", "role": "note", "desc": "psychology, philosophy, self-development, money/time/discipline, quotes, life frameworks", "keywords": ["mindset","discipline","philosophy","habit","self-development"] },
+    { "name": "CAREER",  "hotkey": "c", "color": "#4fd0e0", "role": "note", "desc": "job search, resume, hiring, networking, interviews, work-craft, leadership/management", "keywords": ["hiring","resume","recruiter","linkedin","cover letter","interview","career"] },
+    { "name": "EVENTS",  "hotkey": "e", "color": "#f78ad0", "role": "note", "desc": "webinars, conferences, panels, RSVPs, meetups, dated happenings", "keywords": ["panel discussion","webinar","conference","rsvp","meetup"] },
+    { "name": "READING", "hotkey": "b", "color": "#d0b35f", "role": "note", "desc": "book titles, reading lists, book covers, \"to read\"", "keywords": ["book by","bestseller","goodreads","reading list"] },
+    { "name": "PLACES",  "hotkey": "l", "color": "#8fbf7a", "role": "places", "desc": "travel, restaurants, maps, venue/location info worth keeping", "keywords": [] },
+    { "name": "PROTECT", "hotkey": "s", "color": "#ff5d5d", "role": "protect", "desc": "sensitive identity/financial docs (passport, visa, IDs, payment, account #) — NEVER delete", "keywords": [] },
+    { "name": "REVIEW",  "hotkey": "v", "color": "#9aa3b2", "role": "review", "desc": "genuinely can't tell; needs human eyes", "keywords": [] },
+    { "name": "DELETE",  "hotkey": "x", "color": "#6b7280", "role": "delete", "desc": "junk with no durable reusable content", "keywords": [] }
+  ],
+  "sensitive_packs": {
+    "en": ["passport","social security","ssn","routing number","account number","iban","password","verification code"," otp","cvv","card number","boarding pass","credit line"]
+  }
+}
