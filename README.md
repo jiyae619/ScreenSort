@@ -1,4 +1,4 @@
-# 📷 Photos Pilot
+# 📷 ScreenSort
 
 Turn your Apple **Photos screenshots** (the text-heavy ones) into organized **knowledge notes** — a batch at a time, with bilingual **Korean + English** OCR. It reads your screenshots read-only, drops near-duplicates, **flags anything sensitive and keeps it on your Mac**, lets AI pre-sort the rest, hands you a fast browser sorter to confirm, folds the keepers into topic notes, and only then helps you delete the junk from Photos (with a 30-day undo).
 
@@ -22,7 +22,7 @@ You drive the whole thing from **one local web page — the cockpit**. Nothing i
 ## 1. Install (once)
 
 ```bash
-git clone <your-repo-url> ~/photos-pilot
+git clone https://github.com/jiyae619/ScreenSort.git ~/photos-pilot
 cd ~/photos-pilot
 ./install.sh
 ```
