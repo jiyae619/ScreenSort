@@ -7,7 +7,7 @@ import sys, os, re, glob, html, webbrowser
 sys.path.insert(0, os.path.dirname(__file__))
 from lib import CONFIG, SS, PREV
 
-OUT = f"{PREV}/photos-pilot-summary.html"
+OUT = f"{PREV}/screensort-summary.html"
 
 def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-") or "n"

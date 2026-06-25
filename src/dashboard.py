@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from lib import paths, SS, PREV
 import status
 
-OUT = f"{PREV}/photos-pilot-dashboard.html"
+OUT = f"{PREV}/screensort-dashboard.html"
 SHORT = ["export", "dedup", "privacy", "triage", "categorize", "saved", "applied", "archived"]
 
 def list_batches():
@@ -20,8 +20,8 @@ def list_batches():
 
 def main():
     bs = list_batches()
-    has_editor = os.path.exists(f"{PREV}/photos-pilot-config-editor.html")
-    has_viewer = os.path.exists(f"{PREV}/photos-pilot-summary.html")
+    has_editor = os.path.exists(f"{PREV}/screensort-config-editor.html")
+    has_viewer = os.path.exists(f"{PREV}/screensort-summary.html")
     cards = []
     for b in bs:
         steps, nxt = status.step_status(b)
@@ -48,8 +48,8 @@ def main():
             f'<div class="links">{" · ".join(links) or "<span class=muted>(open in Finder)</span>"}</div>'
             f'</div>')
     glinks = []
-    if has_editor: glinks.append('<a href="photos-pilot-config-editor.html" target="_blank">⚙ Edit categories</a>')
-    if has_viewer: glinks.append('<a href="photos-pilot-summary.html" target="_blank">📚 View notes</a>')
+    if has_editor: glinks.append('<a href="screensort-config-editor.html" target="_blank">⚙ Edit categories</a>')
+    if has_viewer: glinks.append('<a href="screensort-summary.html" target="_blank">📚 View notes</a>')
     body = "\n".join(cards) or '<p class="muted">No batches yet — run <code>pilot &lt;batch&gt;</code> in a Terminal with Photos access to start.</p>'
     page = (TEMPLATE.replace("__CARDS__", body)
                     .replace("__GLINKS__", " · ".join(glinks))
@@ -61,7 +61,7 @@ def main():
     except Exception: pass
 
 TEMPLATE = r"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<title>Photos Pilot — Dashboard</title><style>
+<title>ScreenSort — Dashboard</title><style>
 *{box-sizing:border-box}
 body{margin:0;background:#f6f7f9;color:#1f2328;font:15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo',sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:860px;margin:0 auto;padding:26px 22px 60px}
@@ -81,7 +81,7 @@ h1{font-size:22px;margin:0} .glinks a{color:#4f46e5;text-decoration:none;font-we
 .legend{color:#9aa3b2;font-size:12px;margin-top:20px}
 .legend .pill{font-size:10.5px}
 </style></head><body><div class="wrap">
-<header><h1>📷 Photos Pilot — Dashboard</h1><div class="glinks">__GLINKS__</div></header>
+<header><h1>📷 ScreenSort — Dashboard</h1><div class="glinks">__GLINKS__</div></header>
 <p class="sub">__N__ batch(es). Each shows pipeline progress and the next action. Read-only.</p>
 __CARDS__
 <p class="legend">Stages: <span class="pill ok">✓ done</span> <span class="pill next">next</span> <span class="pill todo">todo</span> &nbsp;·&nbsp; export → scan → triage → categorize → save → apply → notes, then group &amp; delete in Photos.</p>

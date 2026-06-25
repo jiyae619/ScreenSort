@@ -1,4 +1,4 @@
-# Photos Pilot — Python dependencies (macOS only)
+# ScreenSort — Python dependencies (macOS only)
 #
 #   python3 -m pip install --user -r requirements.txt
 #

@@ -57,7 +57,7 @@ def main():
     cfg = load_config()
     interactive = not a.yes
 
-    print("\n📷 Photos Pilot — setup\n" + "─" * 40)
+    print("\n📷 ScreenSort — setup\n" + "─" * 40)
 
     # 1. languages -------------------------------------------------------
     if a.languages:

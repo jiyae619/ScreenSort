@@ -7,7 +7,7 @@ import sys, os, json, webbrowser
 sys.path.insert(0, os.path.dirname(__file__))
 import lib
 
-OUT = f"{lib.PREV}/photos-pilot-config-editor.html"
+OUT = f"{lib.PREV}/screensort-config-editor.html"
 
 def generate():
     """Write the editor HTML from the current config; return its path. No browser open
@@ -23,7 +23,7 @@ def main():
     try: webbrowser.open("file://" + path)
     except Exception: pass
 
-TEMPLATE = r"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>photos-pilot — Category Editor</title><style>
+TEMPLATE = r"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>screensort — Category Editor</title><style>
 body{margin:0;background:#0f1115;color:#e8ebf0;font:14px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo',sans-serif}
 .bar{position:sticky;top:0;z-index:20;background:#11141b;border-bottom:1px solid #2a2f3a;padding:12px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .bar h1{font-size:16px;margin:0 8px 0 0}
@@ -60,7 +60,7 @@ select{cursor:pointer} .role-note{color:#9ad1ff} .role-protect{color:#ff8b8b} .r
 <div id="msg"></div>
 </div>
 <div id="done"><div class="box"><h3>✓ config.json downloaded</h3><div style="color:#9aa3b2;font-size:13px" id="donesum"></div>
-<div class="step">Apply it — back in <b>Claude Code</b>, say <span class="cmd">apply my new categories</span><br><span style="color:#9aa3b2;font-size:12.5px">(or run <span class="cmd">python3 ~/photos-pilot/apply_config.py</span>). It validates &amp; installs to <b>config.json</b> (keeping a backup). Then re-run the sorter to see the new set.</span></div>
+<div class="step">Apply it — back in <b>Claude Code</b>, say <span class="cmd">apply my new categories</span><br><span style="color:#9aa3b2;font-size:12.5px">(or run <span class="cmd">python3 ~/screensort/src/apply_config.py</span>). It validates &amp; installs to <b>config.json</b> (keeping a backup). Then re-run the sorter to see the new set.</span></div>
 <div style="text-align:right"><button onclick="document.getElementById('done').classList.remove('on')">Got it</button></div></div></div>
 <script>
 const CFG=__CFG__;

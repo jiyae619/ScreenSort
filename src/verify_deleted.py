@@ -7,7 +7,7 @@ Recently Deleted (TRASH, 30-day undo), or GONE (deleted+purged or otherwise abse
 Also reports whether the `📦 Delete (<year> pilot)` album exists and how many items it holds.
 
 Run in your Full Disk Access Terminal:
-    ~/.osxphotos-venv/bin/python ~/photos-pilot/verify_deleted.py 2022 2023
+    ~/.osxphotos-venv/bin/python ~/screensort/src/verify_deleted.py 2022 2023
 """
 import sys, os, json
 import osxphotos

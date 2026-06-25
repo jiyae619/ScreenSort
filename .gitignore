@@ -31,8 +31,8 @@ delete.txt
 _triage/
 pilot-*-thumbs/
 pilot-*-recategorize.html
-photos-pilot-summary.html
-photos-pilot-dashboard.html
+screensort-*.html
+photos-pilot-*.html
 /pilot/
 /output/
 /summary/

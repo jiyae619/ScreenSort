@@ -11,8 +11,8 @@ Tag) need this server launched from a Full-Disk-Access Terminal with the osxphot
 venv; everything else runs anywhere.
 
 Launch:
-  ~/.osxphotos-venv/bin/python ~/photos-pilot/serve.py
-or double-click  ~/photos-pilot/ScreenSort.command
+  ~/.osxphotos-venv/bin/python ~/screensort/src/serve.py
+or double-click  ~/screensort/ScreenSort.command
 """
 import sys, os, json, glob, threading, subprocess, webbrowser, time, html as _html
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -209,7 +209,7 @@ def main():
     url = f"http://{HOST}:{PORT}"
     if not native_ok():
         warn = ("  ⚠ launched without the osxphotos venv — Export/Tag will fail.\n"
-                "     relaunch with:  ~/.osxphotos-venv/bin/python ~/photos-pilot/serve.py\n")
+                "     relaunch with:  ~/.osxphotos-venv/bin/python ~/screensort/src/serve.py\n")
     elif fda_ok() is False:
         warn = ("  ⚠ no Full Disk Access — Export/Tag can't read Photos.\n"
                 "     System Settings → Privacy & Security → Full Disk Access → enable Terminal, then relaunch from Terminal.\n")
@@ -298,8 +298,8 @@ code{font-family:"SF Mono",ui-monospace,Menlo,monospace}
 </style></head><body>
 <div class="bar"><h1>📷 ScreenSort · Cockpit</h1>
 <div class="sp"><button id="refresh">↻ Refresh</button>
-<a href="/prev/photos-pilot-workflow-guide.html" target="_blank">Guide</a>
-<a href="/prev/photos-pilot-config-editor.html" target="_blank">⚙ Categories</a></div></div>
+<a href="/prev/screensort-workflow-guide.html" target="_blank">Guide</a>
+<a href="/prev/screensort-config-editor.html" target="_blank">⚙ Categories</a></div></div>
 <div class="wrap">
 <div class="intro">
   <span class="tag"><b style="color:var(--you)">Run here</b> · Export · Scan · Categorize · Apply · Group deletes</span>
@@ -318,7 +318,7 @@ let polling=null;
 // warn BEFORE the user clicks Export — missing venv or missing Full Disk Access
 function banner(){
  const b=$('#banner');
- if(!NATIVE){ b.innerHTML='⚠ Launched without the osxphotos venv — <b>Export/Tag</b> will fail. Relaunch: <span class="cmd">~/.osxphotos-venv/bin/python ~/photos-pilot/serve.py</span>'; b.classList.add('on'); return; }
+ if(!NATIVE){ b.innerHTML='⚠ Launched without the osxphotos venv — <b>Export/Tag</b> will fail. Relaunch: <span class="cmd">~/.osxphotos-venv/bin/python ~/screensort/src/serve.py</span>'; b.classList.add('on'); return; }
  if(FDA==='0'){ b.innerHTML='⚠ This Terminal doesn’t have <b>Full Disk Access</b>, so <b>Export/Tag</b> can’t read Photos. Fix: System Settings → Privacy &amp; Security → <b>Full Disk Access</b> → enable <b>Terminal</b>, then quit Terminal and relaunch the cockpit from it. (A cockpit started from Claude/another app can’t Export.)'; b.classList.add('on'); return; }
  b.classList.remove('on');
 }
