@@ -26,10 +26,11 @@ You drive the whole thing from **one local web page — the cockpit**. Nothing i
 ```bash
 git clone https://github.com/jiyae619/ScreenSort.git ~/screensort
 cd ~/screensort
+cp config.example.json config.json   # optional — customize paths & categories (runs on built-in defaults without it)
 ./install.sh
 ```
 
-`install.sh` installs the Python dependencies (`osxphotos` + the `pyobjc` Apple-Vision bridge), adds two shell shortcuts, and links the Claude Code skill. If you prefer to do it by hand:
+`install.sh` installs the Python dependencies (`osxphotos` + the `pyobjc` Apple-Vision bridge), adds two shell shortcuts, and links the Claude Code skill. Your `config.json` lives at the repo root (next to `config.example.json` and `src/`) and is gitignored, so your paths and keywords never get published. If you prefer to set up by hand:
 
 ```bash
 python3 -m pip install --user osxphotos pyobjc-framework-Vision pyobjc-framework-Quartz pyobjc-framework-Cocoa
@@ -131,7 +132,7 @@ Defaults (set in `lib.py`; see **Configuration** to change them):
 
 ## 7. Configuration
 
-The repo ships **`config.example.json`** — copy it to `config.json` and customize (`cp config.example.json config.json`). A built-in default in `lib.py` takes over if `config.json` is missing/invalid, so the pipeline never breaks. Your `config.json` is gitignored (it holds your paths + keywords).
+The repo ships **`config.example.json`** at the repo root — copy it to `config.json` there (`cp config.example.json config.json`) and customize. `lib.py` (in `src/`) reads it from the root, and a built-in default takes over if `config.json` is missing/invalid, so the pipeline never breaks. Your `config.json` is gitignored (it holds your paths + keywords).
 
 - **`paths`** — where output lives: `vault` (pilot data, notes, archive) and `previews` (cockpit, sorter, thumbnails). Override either.
 - **`categories`** — name, hotkey, color, `desc` (guides the AI), `keywords`, and a `role`. Four roles are reserved and must each appear once: `note`, `protect`, `review`, `delete`; `places` is optional.
