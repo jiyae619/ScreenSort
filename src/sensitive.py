@@ -15,7 +15,7 @@ def main():
     if len(sys.argv) < 2: sys.exit("usage: sensitive.py <batch>")
     year = sys.argv[1]; P = paths(year)
     if not os.path.exists(P["export"]):
-        sys.exit(f"✗ No export for {year}. Run `pilot {year}` in your FDA Terminal first.")
+        sys.exit(f"✗ No export for {year}. Run `screensort {year}` in your Terminal with Photos access first.")
     items = json.load(open(P["export"]))["screenshots"]
     out = {}
     for x in items:

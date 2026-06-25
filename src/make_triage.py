@@ -122,7 +122,7 @@ def main():
     chunk = int(sys.argv[3]) if len(sys.argv) > 3 else 60   # small: classifier agents truncate big JSON output
     P = paths(year)
     if not os.path.exists(P["export"]):
-        sys.exit(f"✗ No export for {year}. Run `pilot {year}` in your FDA Terminal first.")
+        sys.exit(f"✗ No export for {year}. Run `screensort {year}` in your Terminal with Photos access first.")
     if CONFIG.get("privacy", {}).get("no_cloud"):
         sys.exit("ⓘ no_cloud mode is ON (config.privacy.no_cloud) — skipping LLM triage.\n"
                  "  Run dedup.py + sensitive.py, then sort in recat.py (keyword-seeded, fully local).")

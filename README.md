@@ -24,8 +24,8 @@ You drive the whole thing from **one local web page — the cockpit**. Nothing i
 ## 1. Install (once)
 
 ```bash
-git clone https://github.com/jiyae619/ScreenSort.git ~/photos-pilot
-cd ~/photos-pilot
+git clone https://github.com/jiyae619/ScreenSort.git ~/screensort
+cd ~/screensort
 ./install.sh
 ```
 
@@ -50,10 +50,10 @@ In the cockpit this is labeled **“Photos access.”** If it’s missing, the c
 ## 2. Launch the cockpit
 
 ```bash
-python3 ~/photos-pilot/serve.py
+python3 ~/screensort/src/serve.py
 ```
 
-…or **double-click `ScreenSort.command`** in the `photos-pilot` folder. Either opens **http://127.0.0.1:8765** in your browser. The server is **localhost-only** — nothing is exposed to the network. Leave the terminal window open while you work; closing it (or `Ctrl-C`) stops the cockpit.
+…or **double-click `ScreenSort.command`** in the `screensort` folder. Either opens **http://127.0.0.1:8765** in your browser. The server is **localhost-only** — nothing is exposed to the network. Leave the terminal window open while you work; closing it (or `Ctrl-C`) stops the cockpit.
 
 > The cockpit is a **local server, not a saved web page** — the URL only responds while it’s running. Launch it whenever you want to work, close it when you’re done.
 
@@ -149,7 +149,7 @@ Edit categories visually with **⚙ Categories** in the cockpit, or `python3 con
 If your screenshots live in a folder (e.g. `~/Downloads`) instead of the Photos library:
 
 ```bash
-python3 ~/photos-pilot/export_folder.py ~/Downloads downloads 20   # folder · batch label · how many
+python3 ~/screensort/src/export_folder.py ~/Downloads downloads 20   # folder · batch label · how many
 ```
 
 It OCRs locally (Apple Vision, or tesseract — `brew install tesseract tesseract-lang` — as a fallback). Everything downstream is identical **except** the Photos steps: your delete list is `delete.txt` and you remove those files yourself.
@@ -158,11 +158,11 @@ It OCRs locally (Apple Vision, or tesseract — `brew install tesseract tesserac
 
 ## 9. Prefer the terminal? / Manual flow
 
-Every cockpit button maps to a script you can run directly (`python3 ~/photos-pilot/<script>.py <year>`):
+Every cockpit button maps to a script you can run directly (`python3 ~/screensort/src/<script>.py <year>`):
 
 `export.py` → `dedup.py` + `sensitive.py` → *(triage via Claude)* → `recat.py` → *(sort in browser)* → `apply.py` + `archive.py` → *(notes via Claude)* → `tag.py`.
 
-**Lost?** `python3 ~/photos-pilot/status.py <year>` prints which artifacts exist and exactly what to run next.
+**Lost?** `python3 ~/screensort/src/status.py <year>` prints which artifacts exist and exactly what to run next.
 
 ---
 

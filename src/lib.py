@@ -7,7 +7,7 @@ used when config.json is missing or invalid, so the pipeline always runs."""
 import os, re, json
 
 HOME  = os.path.expanduser("~")
-CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config.json")
 
 def _path_override(key):
     """Read paths.<key> from config.json early (before the full config load). Lets each

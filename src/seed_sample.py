@@ -21,7 +21,7 @@ def main():
     batch = sys.argv[1]; n = int(sys.argv[2]) if len(sys.argv) > 2 else 15
     P = paths(batch)
     if not os.path.exists(P["export"]):
-        sys.exit(f"✗ no export for {batch}. Run `pilot {batch}` first.")
+        sys.exit(f"✗ no export for {batch}. Run `screensort {batch}` first.")
     items = json.load(open(P["export"]))["screenshots"]
     dd = json.load(open(P["dups"]))["drop"] if os.path.exists(P["dups"]) else {}
     sens = json.load(open(P["sensitive"]))["items"] if os.path.exists(P["sensitive"]) else {}

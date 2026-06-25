@@ -8,4 +8,4 @@
 DIR="$(cd "$(dirname "$0")" && pwd)"
 PY="$HOME/.osxphotos-venv/bin/python"
 [ -x "$PY" ] || PY="python3"
-exec "$PY" "$DIR/serve.py"
+exec "$PY" "$DIR/src/serve.py"

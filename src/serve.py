@@ -28,7 +28,7 @@ KNOWN_YEARS = ["2025", "2024", "2023", "2022", "2021"]
 
 # An "action" is one cockpit button → an ordered list of scripts to run as one job.
 # fda=True means it needs Photos access (Export / Tag) — only works if the server was
-# launched from an FDA Terminal with the venv.
+# launched from an Terminal with Photos access with the venv.
 ACTIONS = {
     "export": {"seq": ["export.py"],                 "fda": True},
     "prep":   {"seq": ["dedup.py", "sensitive.py"],  "fda": False},

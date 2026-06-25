@@ -10,7 +10,7 @@ def main():
     if len(sys.argv) < 2: sys.exit("usage: apply.py <batch>")
     year = sys.argv[1]; P = paths(year)
     if not os.path.exists(P["export"]):
-        sys.exit(f"✗ No export for {year}. Run `pilot {year}` in your FDA Terminal first.")
+        sys.exit(f"✗ No export for {year}. Run `screensort {year}` in your Terminal with Photos access first.")
     if not os.path.exists(P["decisions"]):
         sys.exit(f"✗ No decisions for {year}. Download them from the sorter first (recat → ⬇ Download decisions).")
     items = {x["uuid"]: x for x in json.load(open(P["export"]))["screenshots"]}
