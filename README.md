@@ -4,6 +4,8 @@ Turn your Apple **Photos screenshots** (the text-heavy ones) into organized **kn
 
 You drive the whole thing from **one local web page — the cockpit**. Nothing is ever deleted automatically; the final delete is always your own keystroke.
 
+![The ScreenSort cockpit — one card per batch: a progress tracker above a row of action buttons, with the next step pulsing.](docs/cockpit.png)
+
 > ### ⚠️ Requirements at a glance
 > - **macOS only.** It uses Apple Photos, Apple Vision OCR, and `sips` — there is no Linux/Windows version.
 > - **The Photos app** with your screenshots in it (turn on iCloud Photos if they only live on your phone).
@@ -51,7 +53,7 @@ In the cockpit this is labeled **“Photos access.”** If it’s missing, the c
 python3 ~/photos-pilot/serve.py
 ```
 
-…or **double-click `Photos Pilot.command`** in the `photos-pilot` folder. Either opens **http://127.0.0.1:8765** in your browser. The server is **localhost-only** — nothing is exposed to the network. Leave the terminal window open while you work; closing it (or `Ctrl-C`) stops the cockpit.
+…or **double-click `ScreenSort.command`** in the `photos-pilot` folder. Either opens **http://127.0.0.1:8765** in your browser. The server is **localhost-only** — nothing is exposed to the network. Leave the terminal window open while you work; closing it (or `Ctrl-C`) stops the cockpit.
 
 > The cockpit is a **local server, not a saved web page** — the URL only responds while it’s running. Launch it whenever you want to work, close it when you’re done.
 

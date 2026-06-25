@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""serve.py — the Photos Pilot COCKPIT. One local web page that drives the whole
+"""serve.py — the ScreenSort COCKPIT. One local web page that drives the whole
 pipeline so you stop bouncing between Terminal, the browser, and Claude.
 
   Export · Prep (dedup+privacy) · Build sorter · Apply · Tag   → buttons here
@@ -12,7 +12,7 @@ venv; everything else runs anywhere.
 
 Launch:
   ~/.osxphotos-venv/bin/python ~/photos-pilot/serve.py
-or double-click  ~/photos-pilot/Photos Pilot.command
+or double-click  ~/photos-pilot/ScreenSort.command
 """
 import sys, os, json, glob, threading, subprocess, webbrowser, time, html as _html
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -215,7 +215,7 @@ def main():
                 "     System Settings → Privacy & Security → Full Disk Access → enable Terminal, then relaunch from Terminal.\n")
     else:
         warn = ""
-    print(f"📷 Photos Pilot cockpit → {url}\n{warn}   (Ctrl-C to stop)")
+    print(f"📷 ScreenSort cockpit → {url}\n{warn}   (Ctrl-C to stop)")
     try:
         webbrowser.open(url)
     except Exception:
@@ -228,7 +228,7 @@ def main():
 # ---------------------------------------------------------------------------
 COCKPIT = r"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Photos Pilot — Cockpit</title><style>
+<title>ScreenSort — Cockpit</title><style>
 :root{--bg:#0f1115;--panel:#11141b;--panel2:#161a22;--line:#2a2f3a;--line2:#181c24;--ink:#e8ebf0;--mut:#9aa3b2;--mut2:#7f8895;--blue:#2563eb;--blue2:#9ad1ff;--ok:#5fd3a3;--you:#ffb454;--claude:#7aa2ff;--warn:#ff5d5d}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo',sans-serif}
@@ -296,7 +296,7 @@ code{font-family:"SF Mono",ui-monospace,Menlo,monospace}
 #log pre{margin:0;padding:10px 16px 18px;overflow:auto;font:12px/1.5 "SF Mono",Menlo,monospace;color:#c8d0dc;white-space:pre-wrap}
 .muted{color:var(--mut2)}
 </style></head><body>
-<div class="bar"><h1>📷 Photos Pilot · Cockpit</h1>
+<div class="bar"><h1>📷 ScreenSort · Cockpit</h1>
 <div class="sp"><button id="refresh">↻ Refresh</button>
 <a href="/prev/photos-pilot-workflow-guide.html" target="_blank">Guide</a>
 <a href="/prev/photos-pilot-config-editor.html" target="_blank">⚙ Categories</a></div></div>
